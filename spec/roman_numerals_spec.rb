@@ -28,4 +28,27 @@ describe RomanNumerals do
      expect(roman_numerals.convert(1999)).to eq "MCMXCIX"
    end
 
+   it "should convert the number 756 to DCCLVI" do
+     expect(roman_numerals.convert(756)).to eq "DCCLVI"
+   end
+
+   it "should convert the number 294 to CCXCIV" do
+     expect(roman_numerals.convert(294)).to eq "CCXCIV"
+   end
+
+   context "errors for edge cases" do
+
+     it "should raise an error when number is not an integer" do
+       expect { roman_numerals.convert(3.4)}.to raise_error "Cannot convert a non-integer to a roman numeral"
+     end
+
+     it "should raise an error when number is zero" do
+       expect { roman_numerals.convert(0)}.to raise_error "Cannot convert zero to a roman numeral"
+     end
+
+
+
+
+   end
+
 end
