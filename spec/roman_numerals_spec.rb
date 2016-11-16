@@ -16,4 +16,16 @@ describe RomanNumerals do
     expect(roman_numerals.convert(10)).to eq "X"
   end
 
+  it "should convert the number 35 to XXXV" do
+    expect(roman_numerals.convert(35)).to eq "XXXV"
+   end
+
+   it "should convert the number 996 to CMXCVI" do
+     expect(roman_numerals.convert(996)).to eq "CMXCVI"
+   end
+
+   it "should convert the number 1999 to MCMXCIX" do
+     expect(roman_numerals.convert(1999)).to eq "MCMXCIX"
+   end
+
 end

@@ -1,9 +1,16 @@
 class RomanNumerals
 
+  CONVERT = {1000 => "M", 900 => "CM", 100 => "C", 90 => "XC", 10 => "X",9 => "IX", 5 => "V", 1 => "I"}
+
   def convert(number)
-    return "X" if number % 10 == 0
-    return "V" if number % 5 == 0
-    "I"
+    empty = ""
+    CONVERT.each do |k,v|
+
+     (number/k).times { empty << v; number %=  k }
+
+  end
+
+  empty
 
   end
 
